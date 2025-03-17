@@ -1,0 +1,120 @@
+{
+    "reportTable":[
+    {
+        "Maker": "AUDI AG",
+        "Total": "32"
+    },
+    {
+        "Maker": "BMW INDIA PVT LTD",
+        "Total": "111"
+    },
+    {
+        "Maker": "DAIMLER INDIA COMMERCIAL VEHICLES PVT. LTD",
+        "Total": "5"
+    },
+    {
+        "Maker": "FCA INDIA AUTOMOBILES PRIVATE LIMITED",
+        "Total": "2"
+    },
+    {
+        "Maker": "FORCE MOTORS LIMITED",
+        "Total": "10"
+    },
+    {
+        "Maker": "FORD INDIA PVT LTD",
+        "Total": "14"
+    },
+    {
+        "Maker": "GENERAL MOTORS INDIA PVT LTD",
+        "Total": "15"
+    },
+    {
+        "Maker": "HINDUSTAN MOTOR FINANCE CORPORATION LIMITED",
+        "Total": "4"
+    },
+    {
+        "Maker": "HONDA CARS INDIA LTD",
+        "Total": "3,237"
+    },
+    {
+        "Maker": "HONDA MOTORCYCLE AND SCOOTER INDIA (P) LTD",
+        "Total": "1"
+    },
+    {
+        "Maker": "HYUNDAI MOTOR INDIA LTD",
+        "Total": "16,636"
+    },
+    {
+        "Maker": "ISUZU MOTORS INDIA PVT LTD",
+        "Total": "2"
+    },
+    {
+        "Maker": "KIA INDIA PRIVATE LIMITED",
+        "Total": "9"
+    },
+    {
+        "Maker": "KIA MOTORS CORPN",
+        "Total": "7"
+    },
+    {
+        "Maker": "MAHINDRA & MAHINDRA LIMITED",
+        "Total": "90"
+    },
+    {
+        "Maker": "MARUTI SUZUKI INDIA LTD",
+        "Total": "33,594"
+    },
+    {
+        "Maker": "MERCEDES -BENZ AG",
+        "Total": "1"
+    },
+    {
+        "Maker": "MERCEDES-BENZ INDIA PVT LTD",
+        "Total": "7"
+    },
+    {
+        "Maker": "MG MOTOR INDIA PVT LTD",
+        "Total": "1"
+    },
+    {
+        "Maker": "NISSAN MOTOR INDIA PVT LTD",
+        "Total": "1,410"
+    },
+    {
+        "Maker": "OTHERS",
+        "Total": "26,920"
+    },
+    {
+        "Maker": "RENAULT INDIA PVT LTD",
+        "Total": "19"
+    },
+    {
+        "Maker": "SKODA AUTO INDIA PVT LTD",
+        "Total": "9"
+    },
+    {
+        "Maker": "SKODA AUTO VOLKSWAGEN INDIA PVT LTD",
+        "Total": "1"
+    },
+    {
+        "Maker": "TATA MOTORS LTD",
+        "Total": "8,340"
+    },
+    {
+        "Maker": "TOYOTA KIRLOSKAR MOTOR PVT LTD",
+        "Total": "1,029"
+    },
+    {
+        "Maker": "TVS MOTOR COMPANY LTD",
+        "Total": "2"
+    },
+    {
+        "Maker": "VOLKSWAGEN INDIA PVT LTD",
+        "Total": "20"
+    },
+    {
+        "Maker": "VOLVO AUTO INDIA PVT LTD",
+        "Total": "1"
+    }
+]
+}

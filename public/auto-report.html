@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Market Penetration Report</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .chart-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            height: 600px;
+        }
+        .controls {
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        select {
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Automobile Market Penetration Report</h1>
+
+    <div class="controls">
+        <select id="yearSelect">
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+        </select>
+        <select id="stateSelect">
+            <option value="Andhra">Andhra</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Delhi">Delhi</option>
+        </select>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <script>
+        async function fetchData(state, year) {
+            const filePath = `/automobile/${state}/reportTable-${year}.json`;
+            try {
+                const response = await fetch(filePath);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const jsonData = await response.json();
+                return jsonData.reportTable; // Access the reportTable array
+            } catch (error) {
+                console.error('Error fetching the data:', error);
+                return null;
+            }
+        }
+
+        function createChart(data) {
+            if (!Array.isArray(data)) {
+                console.error('Data is not an array:', data);
+                return;
+            }
+
+            // Process the data to calculate percentages
+            const reportData = {
+                labels: [],
+                datasets: [{
+                    data: [],
+                    backgroundColor: [],
+                    hoverOffset: 4
+                }]
+            };
+
+            // Calculate total sales
+            const totalSales = data.reduce((sum, item) => {
+                return sum + parseInt(item.Total.replace(/,/g, ''));
+            }, 0);
+
+            // Process each maker's data
+            data.forEach(item => {
+                const sales = parseInt(item.Total.replace(/,/g, ''));
+                const percentage = ((sales / totalSales) * 100).toFixed(2);
+                
+                reportData.labels.push(item.Maker.trim());
+                reportData.datasets[0].data.push(percentage);
+                // Generate a random color
+                reportData.datasets[0].backgroundColor.push(
+                    `hsl(${Math.random() * 360}, 70%, 50%)`
+                );
+            });
+
+            // Clear any existing chart
+            const chartContainer = document.getElementById('pieChart');
+            chartContainer.remove();
+            const newCanvas = document.createElement('canvas');
+            newCanvas.id = 'pieChart';
+            document.querySelector('.chart-container').appendChild(newCanvas);
+
+            // Create Pie Chart
+            const ctx = document.getElementById('pieChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: reportData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Market Penetration by Brand (%)',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initial chart creation
+        fetchData('Andhra', '2019').then(data => createChart(data));
+
+        // Event listeners for dropdowns
+        document.getElementById('yearSelect').addEventListener('change', function() {
+            const year = this.value;
+            const state = document.getElementById('stateSelect').value;
+            fetchData(state, year).then(data => createChart(data));
+        });
+
+        document.getElementById('stateSelect').addEventListener('change', function() {
+            const state = this.value;
+            const year = document.getElementById('yearSelect').value;
+            fetchData(state, year).then(data => createChart(data));
+        });
+    </script>
+</body>
+</html>

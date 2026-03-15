@@ -13,7 +13,7 @@
       <link>https://thatsmeadarsh.github.io/posts/test-two-workflow-approval/</link>
       <pubDate>Sun, 15 Mar 2026 22:45:00 +0100</pubDate>
       <guid>https://thatsmeadarsh.github.io/posts/test-two-workflow-approval/</guid>
-      <description>&lt;p&gt;This post validates the split-workflow approach where draft generation and human review are decoupled into separate n8n workflows.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-design&#34;&gt;The Design&lt;/h2&gt;&#xA;&lt;p&gt;Workflow 1 runs on a schedule, detects new blog posts, and generates AI LinkedIn drafts automatically. Workflow 2 is a form-triggered workflow that lets you review, edit, and approve the draft before publishing.&lt;/p&gt;&#xA;&lt;p&gt;This separation avoids n8n&amp;rsquo;s webhook-waiting SQLite bug and gives a cleaner user experience.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post validates testing the split-workflow approach where draft generation and human review are decoupled into separate n8n workflows.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-design&#34;&gt;The Design&lt;/h2&gt;&#xA;&lt;p&gt;Workflow 1 runs on a schedule, detects new blog posts, and generates AI LinkedIn drafts automatically. Workflow 2 is a form-triggered workflow that lets you review, edit, and approve the draft before publishing.&lt;/p&gt;&#xA;&lt;p&gt;This separation avoids n8n&amp;rsquo;s webhook-waiting SQLite bug and gives a cleaner user experience.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically</title>

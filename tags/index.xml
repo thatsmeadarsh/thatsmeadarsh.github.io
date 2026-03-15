@@ -6,48 +6,20 @@
     <description>Recent content in Tags on What About Adarsh</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2026 10:00:00 +0100</lastBuildDate>
     <atom:link href="https://thatsmeadarsh.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Automation</title>
-      <link>https://thatsmeadarsh.github.io/tags/automation/</link>
-      <pubDate>Sun, 15 Mar 2026 10:00:00 +0100</pubDate>
-      <guid>https://thatsmeadarsh.github.io/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Forms</title>
-      <link>https://thatsmeadarsh.github.io/tags/forms/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thatsmeadarsh.github.io/tags/forms/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>N8n</title>
-      <link>https://thatsmeadarsh.github.io/tags/n8n/</link>
-      <pubDate>Sun, 15 Mar 2026 10:00:00 +0100</pubDate>
-      <guid>https://thatsmeadarsh.github.io/tags/n8n/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pipeline</title>
-      <link>https://thatsmeadarsh.github.io/tags/pipeline/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thatsmeadarsh.github.io/tags/pipeline/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Architecture</title>
-      <link>https://thatsmeadarsh.github.io/tags/architecture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://thatsmeadarsh.github.io/tags/architecture/</guid>
-      <description></description>
-    </item>
     <item>
       <title>AI</title>
       <link>https://thatsmeadarsh.github.io/tags/ai/</link>
       <pubDate>Sun, 15 Mar 2026 10:00:00 +0100</pubDate>
       <guid>https://thatsmeadarsh.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>https://thatsmeadarsh.github.io/tags/automation/</link>
+      <pubDate>Sun, 15 Mar 2026 10:00:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/tags/automation/</guid>
       <description></description>
     </item>
     <item>
@@ -76,6 +48,13 @@
       <link>https://thatsmeadarsh.github.io/tags/linkedin/</link>
       <pubDate>Sun, 15 Mar 2026 10:00:00 +0100</pubDate>
       <guid>https://thatsmeadarsh.github.io/tags/linkedin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>N8n</title>
+      <link>https://thatsmeadarsh.github.io/tags/n8n/</link>
+      <pubDate>Sun, 15 Mar 2026 10:00:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/tags/n8n/</guid>
       <description></description>
     </item>
     <item>

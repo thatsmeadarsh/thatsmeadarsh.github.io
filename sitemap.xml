@@ -2,34 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://thatsmeadarsh.github.io/tags/automation/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/categories/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/posts/test-full-e2e-flow/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/n8n/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/pipeline/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/posts/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/categories/technology/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/</loc>
+    <lastmod>2026-03-15T23:15:00+01:00</lastmod>
+  </url><url>
     <loc>https://thatsmeadarsh.github.io/tags/architecture/</loc>
     <lastmod>2026-03-15T22:45:00+01:00</lastmod>
   </url><url>
     <loc>https://thatsmeadarsh.github.io/categories/automation/</loc>
     <lastmod>2026-03-15T22:45:00+01:00</lastmod>
   </url><url>
-    <loc>https://thatsmeadarsh.github.io/tags/automation/</loc>
-    <lastmod>2026-03-15T22:45:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/categories/</loc>
-    <lastmod>2026-03-15T22:45:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/tags/n8n/</loc>
-    <lastmod>2026-03-15T22:45:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/posts/</loc>
-    <lastmod>2026-03-15T22:45:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/tags/</loc>
-    <lastmod>2026-03-15T22:45:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/categories/technology/</loc>
-    <lastmod>2026-03-15T22:45:00+01:00</lastmod>
-  </url><url>
     <loc>https://thatsmeadarsh.github.io/posts/test-two-workflow-approval/</loc>
-    <lastmod>2026-03-15T22:45:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/</loc>
     <lastmod>2026-03-15T22:45:00+01:00</lastmod>
   </url><url>
     <loc>https://thatsmeadarsh.github.io/tags/ai/</loc>

@@ -7,7 +7,7 @@
     <title>How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically | What About Adarsh</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="A few weeks ago, I got tired of the same ritual every time I published a blog post. Write the post, push to GitHub, wait for the build, check the site, then — if I remembered — draft a LinkedIn post to share it. Half the time I&rsquo;d forget the LinkedIn part entirely, or I&rsquo;d post it days later when the moment had already passed.
-So I built a system that does all of it for me. git push is the only manual step. Everything after that — building the site, deploying it, generating an AI-written LinkedIn announcement, and scheduling it for review — happens automatically.">
+So I built a system that does almost all of it for me. git push kicks everything off. The site builds and deploys automatically. n8n detects the new post, generates an AI-written LinkedIn announcement, and then pauses for one deliberate step: I review the draft and approve it before it goes live. That approval gate is intentional — AI-generated text is good, not always great.">
     <meta name="generator" content="Hugo 0.157.0">
     
     
@@ -39,7 +39,7 @@ So I built a system that does all of it for me. git push is the only manual step
   <meta property="og:site_name" content="What About Adarsh">
   <meta property="og:title" content="How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically">
   <meta property="og:description" content="A few weeks ago, I got tired of the same ritual every time I published a blog post. Write the post, push to GitHub, wait for the build, check the site, then — if I remembered — draft a LinkedIn post to share it. Half the time I’d forget the LinkedIn part entirely, or I’d post it days later when the moment had already passed.
-So I built a system that does all of it for me. git push is the only manual step. Everything after that — building the site, deploying it, generating an AI-written LinkedIn announcement, and scheduling it for review — happens automatically.">
+So I built a system that does almost all of it for me. git push kicks everything off. The site builds and deploys automatically. n8n detects the new post, generates an AI-written LinkedIn announcement, and then pauses for one deliberate step: I review the draft and approve it before it goes live. That approval gate is intentional — AI-generated text is good, not always great.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -54,15 +54,15 @@ So I built a system that does all of it for me. git push is the only manual step
 
   <meta itemprop="name" content="How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically">
   <meta itemprop="description" content="A few weeks ago, I got tired of the same ritual every time I published a blog post. Write the post, push to GitHub, wait for the build, check the site, then — if I remembered — draft a LinkedIn post to share it. Half the time I’d forget the LinkedIn part entirely, or I’d post it days later when the moment had already passed.
-So I built a system that does all of it for me. git push is the only manual step. Everything after that — building the site, deploying it, generating an AI-written LinkedIn announcement, and scheduling it for review — happens automatically.">
+So I built a system that does almost all of it for me. git push kicks everything off. The site builds and deploys automatically. n8n detects the new post, generates an AI-written LinkedIn announcement, and then pauses for one deliberate step: I review the draft and approve it before it goes live. That approval gate is intentional — AI-generated text is good, not always great.">
   <meta itemprop="datePublished" content="2026-03-15T10:00:00+01:00">
   <meta itemprop="dateModified" content="2026-03-15T10:00:00+01:00">
-  <meta itemprop="wordCount" content="2049">
+  <meta itemprop="wordCount" content="2078">
   <meta itemprop="keywords" content="N8n,GitHub Actions,Automation,Hugo,LinkedIn,AI,DevOps,Workflow">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically">
   <meta name="twitter:description" content="A few weeks ago, I got tired of the same ritual every time I published a blog post. Write the post, push to GitHub, wait for the build, check the site, then — if I remembered — draft a LinkedIn post to share it. Half the time I’d forget the LinkedIn part entirely, or I’d post it days later when the moment had already passed.
-So I built a system that does all of it for me. git push is the only manual step. Everything after that — building the site, deploying it, generating an AI-written LinkedIn announcement, and scheduling it for review — happens automatically.">
+So I built a system that does almost all of it for me. git push kicks everything off. The site builds and deploys automatically. n8n detects the new post, generates an AI-written LinkedIn announcement, and then pauses for one deliberate step: I review the draft and approve it before it goes live. That approval gate is intentional — AI-generated text is good, not always great.">
 
       
     
@@ -134,7 +134,7 @@ So I built a system that does all of it for me. git push is the only manual step
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>A few weeks ago, I got tired of the same ritual every time I published a blog post. Write the post, push to GitHub, wait for the build, check the site, then — if I remembered — draft a LinkedIn post to share it. Half the time I&rsquo;d forget the LinkedIn part entirely, or I&rsquo;d post it days later when the moment had already passed.</p>
-<p>So I built a system that does all of it for me. <code>git push</code> is the only manual step. Everything after that — building the site, deploying it, generating an AI-written LinkedIn announcement, and scheduling it for review — happens automatically.</p>
+<p>So I built a system that does almost all of it for me. <code>git push</code> kicks everything off. The site builds and deploys automatically. n8n detects the new post, generates an AI-written LinkedIn announcement, and then pauses for one deliberate step: I review the draft and approve it before it goes live. That approval gate is intentional — AI-generated text is good, not always great.</p>
 <p>Here&rsquo;s exactly how it works.</p>
 <hr>
 <h2 id="the-problem-with-manual-publishing">The Problem with Manual Publishing</h2>
@@ -399,7 +399,7 @@ Model: Meta-Llama-3.1-8B-Instruct
 <p>The core idea is transferable to any static site generator that deploys to a separate repo — Astro, Jekyll, Eleventy. The GitHub polling pattern works for any CI/CD pipeline that commits to a repository as its final step. Swap LinkedIn for Twitter/X or Bluesky and change one API call.</p>
 <p>The hardest part was figuring out that the Pages repo commit was the right event to watch — not the Hugo repo push, not a GitHub Actions webhook, not a file watcher. Once that clicked, the rest of the design followed naturally.</p>
 <hr>
-<p><em>The entire pipeline — from this post&rsquo;s markdown file to a live site and a scheduled LinkedIn announcement — ran without any manual steps after <code>git push</code>. That&rsquo;s the point.</em></p>
+<p><em>The entire pipeline — from this post&rsquo;s markdown file to a live site and an AI-drafted LinkedIn post waiting for approval — ran automatically after <code>git push</code>. One review step, by design. That&rsquo;s the point.</em></p>
 <ul class="pa0">
   
    <li class="list di">

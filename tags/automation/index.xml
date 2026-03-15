@@ -6,8 +6,15 @@
     <description>Recent content in Automation on What About Adarsh</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2026 10:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2026 13:00:00 +0100</lastBuildDate>
     <atom:link href="https://thatsmeadarsh.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Post: Pipeline Verification</title>
+      <link>https://thatsmeadarsh.github.io/posts/test-pipeline-verification/</link>
+      <pubDate>Sun, 15 Mar 2026 13:00:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/posts/test-pipeline-verification/</guid>
+      <description>&lt;p&gt;This is a test post to verify the end-to-end auto-publish pipeline.&lt;/p&gt;&#xA;&lt;p&gt;It will be deleted after the pipeline is confirmed working.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically</title>
       <link>https://thatsmeadarsh.github.io/posts/zero-touch-blog-publishing-github-actions-n8n/</link>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on What About Adarsh</title>
+    <link>https://thatsmeadarsh.github.io/tags/test/</link>
+    <description>Recent content in Test on What About Adarsh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Mar 2026 13:00:00 +0100</lastBuildDate>
+    <atom:link href="https://thatsmeadarsh.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Post: Pipeline Verification</title>
+      <link>https://thatsmeadarsh.github.io/posts/test-pipeline-verification/</link>
+      <pubDate>Sun, 15 Mar 2026 13:00:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/posts/test-pipeline-verification/</guid>
+      <description>&lt;p&gt;This is a test post to verify the end-to-end auto-publish pipeline.&lt;/p&gt;&#xA;&lt;p&gt;It will be deleted after the pipeline is confirmed working.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

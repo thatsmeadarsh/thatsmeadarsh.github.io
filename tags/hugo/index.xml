@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on What About Adarsh</title>
+    <link>https://thatsmeadarsh.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on What About Adarsh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Mar 2026 10:00:00 +0100</lastBuildDate>
+    <atom:link href="https://thatsmeadarsh.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically</title>
+      <link>https://thatsmeadarsh.github.io/posts/zero-touch-blog-publishing-github-actions-n8n/</link>
+      <pubDate>Sun, 15 Mar 2026 10:00:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/posts/zero-touch-blog-publishing-github-actions-n8n/</guid>
+      <description>&lt;p&gt;A few weeks ago, I got tired of the same ritual every time I published a blog post. Write the post, push to GitHub, wait for the build, check the site, then — if I remembered — draft a LinkedIn post to share it. Half the time I&amp;rsquo;d forget the LinkedIn part entirely, or I&amp;rsquo;d post it days later when the moment had already passed.&lt;/p&gt;&#xA;&lt;p&gt;So I built a system that does all of it for me. &lt;code&gt;git push&lt;/code&gt; is the only manual step. Everything after that — building the site, deploying it, generating an AI-written LinkedIn announcement, and scheduling it for review — happens automatically.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

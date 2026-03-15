@@ -57,7 +57,7 @@ So I built a system that does almost all of it for me. git push kicks everything
 So I built a system that does almost all of it for me. git push kicks everything off. The site builds and deploys automatically. n8n detects the new post, generates an AI-written LinkedIn announcement, and then pauses for one deliberate step: I review the draft and approve it before it goes live. That approval gate is intentional — AI-generated text is good, not always great.">
   <meta itemprop="datePublished" content="2026-03-15T10:00:00+01:00">
   <meta itemprop="dateModified" content="2026-03-15T10:00:00+01:00">
-  <meta itemprop="wordCount" content="2078">
+  <meta itemprop="wordCount" content="2218">
   <meta itemprop="keywords" content="N8n,GitHub Actions,Automation,Hugo,LinkedIn,AI,DevOps,Workflow">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically">
@@ -176,14 +176,14 @@ So I built a system that does almost all of it for me. git push kicks everything
       n8n (Docker)
   - Detects new commit
   - Fetches original markdown
-  - AI generates LinkedIn post
-  - Schedules post for review
+  - AI generates LinkedIn draft
+  - Pauses for author approval
         |
-        v
-  LinkedIn (scheduled, T+24h)
+        v (after approval)
+  LinkedIn (published immediately)
 </code></pre><figure><a href="/images/auto-publish-01-high-level.png" target="_blank"><img src="/images/auto-publish-01-high-level.png"
-    alt="High-level architecture: GitHub Actions builds and deploys, n8n polls and publishes" width="100%"></a><figcaption>
-      <p>The full pipeline — GitHub Actions handles build and deploy, n8n handles detection, AI, and social. The Pages repo commit is the only handoff between them.</p>
+    alt="High-level architecture: git push triggers GitHub Actions build, n8n polls, generates AI draft, pauses for approval, then publishes to LinkedIn" width="100%"></a><figcaption>
+      <p>The full pipeline — GitHub Actions builds and deploys, n8n detects, generates, and pauses for one approval step before publishing to LinkedIn. The Pages repo commit is the only handoff between the two systems.</p>
     </figcaption>
 </figure>
 
@@ -203,7 +203,7 @@ So I built a system that does almost all of it for me. git push kicks everything
 <h3 id="stage-1--2-setup--data-sync">Stage 1 &amp; 2: Setup + Data Sync</h3>
 <p>Checks out the code (including Hugo&rsquo;s Ananke theme as a git submodule), installs Hugo, and pulls the latest services data from a Contentful CDN endpoint. This keeps the Services page current without any manual updates.</p>
 <h3 id="stage-3-build">Stage 3: Build</h3>
-<p>Deletes Hugo&rsquo;s cache, runs <code>hugo</code> to compile all markdown posts into static HTML, and commits the output to the <code>public/</code> folder.</p>
+<p>Deletes Hugo&rsquo;s cache, runs <code>hugo --buildFuture</code> to compile all markdown posts into static HTML (including future-dated posts). The <code>public/</code> output folder is not committed back to the source repo — it goes directly to the Pages repo in the next stage.</p>
 <h3 id="stage-4-cross-repo-deploy">Stage 4: Cross-Repo Deploy</h3>
 <p>This is the key step. The built site lives in a separate repository (<code>thatsmeadarsh.github.io</code>) — not the source repo. The workflow clones that repo, wipes its contents, copies the freshly built HTML across, and pushes.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># The cross-repo push (simplified)</span>
@@ -221,10 +221,10 @@ So I built a system that does almost all of it for me. git push kicks everything
 <p>GitHub Pages has its own Action watching the <code>thatsmeadarsh.github.io</code> repo. When the new HTML lands there, it automatically deploys to the CDN. The site is live within seconds of the push.</p>
 <hr>
 <h2 id="part-2-n8n-detects-thinks-and-posts">Part 2: n8n Detects, Thinks, and Posts</h2>
-<p>n8n runs in Docker on my local machine. It has a 13-node workflow that wakes up every 5 minutes.</p>
+<p>n8n runs in Docker on my local machine. It has a 14-node workflow that wakes up every 5 minutes.</p>
 <figure><a href="/images/n8n-workflow.png" target="_blank"><img src="/images/n8n-workflow.png"
-    alt="n8n workflow canvas showing all 13 nodes from schedule trigger to LinkedIn publish" width="100%"></a><figcaption>
-      <p>The complete n8n workflow — from polling the GitHub API every 5 minutes to scheduling the AI-generated LinkedIn post.</p>
+    alt="n8n workflow canvas showing all 14 nodes from schedule trigger through Wait for Approval to LinkedIn publish" width="100%"></a><figcaption>
+      <p>The complete n8n workflow — polling the GitHub API every 5 minutes, generating an AI LinkedIn draft, pausing for approval, then publishing immediately after the author resumes the execution.</p>
     </figcaption>
 </figure>
 
@@ -287,11 +287,18 @@ So I built a system that does almost all of it for me. git push kicks everything
 <pre tabindex="0"><code>POST https://router.huggingface.co/sambanova/v1/chat/completions
 Model: Meta-Llama-3.1-8B-Instruct
 </code></pre><p>The system prompt instructs the model to write a LinkedIn post in a specific style: conversational, insight-driven, with relevant hashtags, and ending with a clear call to action. The model runs on SambaNova&rsquo;s hardware via HuggingFace&rsquo;s free tier — fast and zero cost.</p>
-<h3 id="nodes-912-linkedin-scheduling">Nodes 9–12: LinkedIn Scheduling</h3>
-<p>Rather than posting immediately, n8n creates a <strong>scheduled post set 24 hours in the future</strong>. This is a deliberate design choice — it gives me a review window to edit the AI-generated text if needed before it goes live.</p>
+<h3 id="nodes-913-review-gate-and-linkedin-publishing">Nodes 9–13: Review Gate and LinkedIn Publishing</h3>
+<p>After formatting the AI draft, the workflow hits a <strong>Wait node</strong> — a built-in n8n mechanism that pauses execution indefinitely and resumes only when a specific URL is visited. The execution shows as &ldquo;Waiting&rdquo; in the n8n UI.</p>
+<p>To approve and publish:</p>
+<ol>
+<li>Open <code>http://localhost:5678</code> → <strong>Executions</strong></li>
+<li>Find the execution in <strong>Waiting</strong> state — click it</li>
+<li>In the <strong>Wait for Approval</strong> node output, copy the <code>resumeUrl</code></li>
+<li>Open that URL in your browser</li>
+<li>The execution resumes immediately — n8n fetches your LinkedIn profile and publishes the post</li>
+</ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;lifecycleState&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;SCHEDULED&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;scheduledPublishTime&#34;</span><span style="color:#f92672">:</span> Date.<span style="color:#a6e22e">now</span>() <span style="color:#f92672">+</span> (<span style="color:#ae81ff">24</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;lifecycleState&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;PUBLISHED&#34;</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;specificContent&#34;</span><span style="color:#f92672">:</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;com.linkedin.ugc.ShareContent&#34;</span><span style="color:#f92672">:</span> {
 </span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;shareCommentary&#34;</span><span style="color:#f92672">:</span> { <span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">aiGeneratedPost</span> },
@@ -304,8 +311,8 @@ Model: Meta-Llama-3.1-8B-Instruct
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>LinkedIn crawls the <code>originalUrl</code> and generates the article card preview automatically. Since n8n only fires after a new commit appears on the Pages repo — meaning deployment is already complete — the URL is live and crawlable by the time the post is scheduled.</p>
-<p>To review: LinkedIn → Me → Posts &amp; Activity → Scheduled. Edit if needed, post now or let it auto-publish.</p>
+</span></span></code></pre></div><p>One thing worth knowing: LinkedIn&rsquo;s UGC API has a <code>lifecycleState: SCHEDULED</code> option with a <code>scheduledPublishTime</code> field. I tried it. It requires LinkedIn Marketing Partner access and returns a 403 for standard developer apps. The Wait node achieves the same goal — a deliberate review window — without any special API permissions.</p>
+<p>LinkedIn crawls the <code>originalUrl</code> and generates the article card preview automatically. Since n8n only fires after a new commit appears on the Pages repo, the URL is already live and crawlable when the post publishes.</p>
 <hr>
 <h2 id="the-bridge-why-this-design-works">The Bridge: Why This Design Works</h2>
 <p>The elegant part of this system is how GitHub Actions and n8n are coupled without direct integration.</p>
@@ -347,7 +354,7 @@ Model: Meta-Llama-3.1-8B-Instruct
 <h2 id="what-i-learned-building-this">What I Learned Building This</h2>
 <p><strong>Corporate networks are more hostile than you think.</strong> My initial webhook-based design worked perfectly on a home connection. It broke completely in the office. The polling rewrite took an afternoon and eliminated all external dependencies on inbound connectivity.</p>
 <p><strong>Static data in n8n is powerful but invisible.</strong> The <code>$getWorkflowStaticData()</code> function persists to the Docker volume — it survives container restarts and n8n updates. It&rsquo;s exactly right for tracking &ldquo;last processed commit SHA.&rdquo; The catch: if you ever need to reset it, you have to do it through a workflow execution or directly in the database.</p>
-<p><strong>Scheduled posts are better than immediate posts.</strong> I almost made the system post to LinkedIn instantly. A 24-hour review window turned out to be genuinely useful — AI-generated text is often good but not always great. Having a buffer to edit before it goes live makes the whole thing feel less risky.</p>
+<p><strong>An approval gate beats both immediate and scheduled posts.</strong> I tried LinkedIn&rsquo;s scheduled post API first — it requires Marketing Partner access and throws a 403 for standard developer apps. I almost fell back to posting immediately. Instead I used n8n&rsquo;s Wait node: the execution pauses, I review the AI draft in the n8n UI, and I approve when I&rsquo;m happy with it. It gives me a real review window without any special API permissions, and the post goes live on my timeline rather than a fixed 24h delay.</p>
 <p><strong>Two-repo Hugo deployments are the right call.</strong> Keeping the source (with frontmatter, drafts, config) separate from the built output (pure HTML) makes a lot of things cleaner. n8n can read from the source repo for markdown context while watching the Pages repo for deployment signals. They serve different purposes.</p>
 <p><strong>NODE_TLS_REJECT_UNAUTHORIZED=0 in Docker is less scary than it sounds.</strong> The flag is scoped to the Node.js process inside the container. It doesn&rsquo;t affect the host system. For a local automation tool making outbound API calls over corporate TLS interception, it&rsquo;s the practical solution.</p>
 <hr>
@@ -384,7 +391,7 @@ Model: Meta-Llama-3.1-8B-Instruct
       <tr>
           <td>Social publishing</td>
           <td>LinkedIn UGC API + OAuth2</td>
-          <td>Scheduled post creation</td>
+          <td>Immediate publish after manual approval</td>
       </tr>
       <tr>
           <td>State persistence</td>

@@ -2,16 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://thatsmeadarsh.github.io/categories/ai/</loc>
-    <lastmod>2025-09-19T10:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://thatsmeadarsh.github.io/tags/ai/</loc>
-    <lastmod>2025-09-19T10:00:00+01:00</lastmod>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/categories/automation/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://thatsmeadarsh.github.io/tags/automation/</loc>
-    <lastmod>2025-09-19T10:00:00+01:00</lastmod>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://thatsmeadarsh.github.io/categories/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/devops/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/github-actions/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/posts/automated-blog-to-linkedin-with-n8n/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/hugo/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/linkedin/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/n8n/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/posts/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/categories/software-engineering/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/categories/technology/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/tags/workflow/</loc>
+    <lastmod>2026-03-16T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://thatsmeadarsh.github.io/categories/ai/</loc>
     <lastmod>2025-09-19T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://thatsmeadarsh.github.io/tags/claude-sonnet/</loc>
@@ -29,22 +68,7 @@
     <loc>https://thatsmeadarsh.github.io/tags/mcp/</loc>
     <lastmod>2025-09-19T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://thatsmeadarsh.github.io/posts/</loc>
-    <lastmod>2025-09-19T10:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/categories/software-engineering/</loc>
-    <lastmod>2025-09-19T10:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://thatsmeadarsh.github.io/tags/subagents/</loc>
-    <lastmod>2025-09-19T10:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/tags/</loc>
-    <lastmod>2025-09-19T10:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/categories/technology/</loc>
-    <lastmod>2025-09-19T10:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://thatsmeadarsh.github.io/</loc>
     <lastmod>2025-09-19T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://thatsmeadarsh.github.io/posts/guide-for-software-engineers-2025/</loc>

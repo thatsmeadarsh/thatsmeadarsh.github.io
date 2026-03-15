@@ -6,8 +6,15 @@
     <description>Recent content in AI on What About Adarsh</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Sep 2025 10:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 10:00:00 +0100</lastBuildDate>
     <atom:link href="https://thatsmeadarsh.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — With One Review Step</title>
+      <link>https://thatsmeadarsh.github.io/posts/automated-blog-to-linkedin-with-n8n/</link>
+      <pubDate>Mon, 16 Mar 2026 10:00:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/posts/automated-blog-to-linkedin-with-n8n/</guid>
+      <description>&lt;p&gt;A few weeks ago, I got tired of the same ritual every time I published a blog post. Write the post, push to GitHub, wait for the build, check the site, then — if I remembered — draft a LinkedIn post to share it. Half the time I&amp;rsquo;d forget the LinkedIn part entirely, or I&amp;rsquo;d post it days later when the moment had already passed.&lt;/p&gt;&#xA;&lt;p&gt;So I built a system that does almost all of it for me. &lt;code&gt;git push&lt;/code&gt; kicks everything off. The site builds and deploys automatically. An n8n workflow detects the new post, generates an AI-written LinkedIn draft, and saves it to a queue. When I&amp;rsquo;m ready, I open a review form, tweak the draft if needed, and hit approve. The post goes live on LinkedIn instantly.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>From Theory to Practice: Building Next-Gen Incident Management with MCP Architecture</title>
       <link>https://thatsmeadarsh.github.io/posts/mcp-hackathon-blog-post/</link>

@@ -47,7 +47,7 @@
 
   <meta itemprop="name" content="What About Adarsh">
   <meta itemprop="datePublished" content="2026-03-15T10:00:00+01:00">
-  <meta itemprop="dateModified" content="2026-03-15T10:00:00+01:00">
+  <meta itemprop="dateModified" content="2026-03-15T22:00:00+01:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="What About Adarsh">
 
@@ -130,6 +130,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/test-form-approval/" class="color-inherit dim link">
+            Testing the Form-Based Approval Flow
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>This post tests the new form-based approval step in the n8n auto-publish pipeline.</p>
+<h2 id="what-changed">What Changed</h2>
+<p>The original webhook-based approval had a SQLite bug in n8n 2.11.4 that prevented the resume URL from working. The new approach uses n8n&rsquo;s built-in Form node which presents a web form where you can:</p>
+<ul>
+<li>Review the AI-generated LinkedIn post</li>
+<li>Edit the text before publishing</li>
+<li>Approve or reject with a single click</li>
+</ul>
+<p>This is a much better workflow for human-in-the-loop AI content review.</p>
+        </div>
+        <a href="/posts/test-form-approval/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/zero-touch-blog-publishing-github-actions-n8n/" class="color-inherit dim link">
             How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically
             </a>
@@ -170,37 +201,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/guide-for-software-engineers-2025/" class="color-inherit dim link">
-            How to be Software Engineer in 2025
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <p>I got an opportunity to do an internal presentation within my organisation. The topic I talked about was &ldquo;How to be a Software Engineer in 2025?&rdquo; Let me try to write this as a blog.</p>
-<h2 id="the-evolution-of-technology-a-journey-through-time">The Evolution of Technology: A Journey Through Time</h2>
-<p>Many of us have spent years in this fast-paced industry, witnessing firsthand the remarkable evolution of technology. We saw the emergence of Angular and React, transforming traditional web development beyond HTML, JavaScript, and CSS. We experienced how JSTL modernized JSPs and how ESB tools like IIB and Camel revolutionized enterprise integration. We watched as organizations shifted from legacy mainframes to agile, cloud-native systems.</p>
-        </div>
-        <a href="/posts/guide-for-software-engineers-2025/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
         <section class="w-100">
           <h1 class="f3">More</h1>
           
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/posts/guide-for-software-engineers-2025/" class="link black dim">
+                How to be Software Engineer in 2025
+              </a>
+            </h2>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/posts/ssg-implementation-guide/" class="link black dim">

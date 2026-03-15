@@ -6,8 +6,15 @@
     <description>Recent content in Technology on What About Adarsh</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2026 10:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2026 22:00:00 +0100</lastBuildDate>
     <atom:link href="https://thatsmeadarsh.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing the Form-Based Approval Flow</title>
+      <link>https://thatsmeadarsh.github.io/posts/test-form-approval/</link>
+      <pubDate>Sun, 15 Mar 2026 22:00:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/posts/test-form-approval/</guid>
+      <description>&lt;p&gt;This post tests the new form-based approval step in the n8n auto-publish pipeline.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-changed&#34;&gt;What Changed&lt;/h2&gt;&#xA;&lt;p&gt;The original webhook-based approval had a SQLite bug in n8n 2.11.4 that prevented the resume URL from working. The new approach uses n8n&amp;rsquo;s built-in Form node which presents a web form where you can:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Review the AI-generated LinkedIn post&lt;/li&gt;&#xA;&lt;li&gt;Edit the text before publishing&lt;/li&gt;&#xA;&lt;li&gt;Approve or reject with a single click&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This is a much better workflow for human-in-the-loop AI content review.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically</title>
       <link>https://thatsmeadarsh.github.io/posts/zero-touch-blog-publishing-github-actions-n8n/</link>

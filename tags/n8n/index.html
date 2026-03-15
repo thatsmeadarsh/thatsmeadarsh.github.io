@@ -46,7 +46,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="N8n">
-  <meta itemprop="dateModified" content="2026-03-15T13:00:00+01:00">
+  <meta itemprop="datePublished" content="2026-03-15T13:00:00+01:00">
+  <meta itemprop="dateModified" content="2026-03-15T21:30:00+01:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="N8n">
 
@@ -111,6 +112,36 @@
   </article>
   <div class="mw8 center">
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/test-n8n-pipeline-e2e/" class="link black dim">
+        Testing the End-to-End Auto Publish Pipeline
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>This is a test post to verify the full n8n auto-publish pipeline works end to end.</p>
+<h2 id="what-we-are-testing">What We Are Testing</h2>
+<p>The complete flow from <code>git push</code> to LinkedIn post generation:</p>
+<ol>
+<li>Push a new markdown post to the Hugo source repo</li>
+<li>GitHub Actions builds and deploys to GitHub Pages</li>
+<li>n8n detects the new commit via polling</li>
+<li>Fetches the markdown, parses frontmatter</li>
+<li>Generates an AI LinkedIn post via HuggingFace</li>
+<li>Waits for manual approval</li>
+<li>Posts to LinkedIn</li>
+</ol>
+<p>If you are reading this on the live site, step 1 through 2 worked. If a LinkedIn post appeared, the whole pipeline is operational.</p>
+    </div>
+    <a href="/posts/test-n8n-pipeline-e2e/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
       
         <div class="relative w-100  mb4 bg-white">
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">

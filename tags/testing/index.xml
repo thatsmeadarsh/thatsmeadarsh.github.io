@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on What About Adarsh</title>
+    <link>https://thatsmeadarsh.github.io/tags/testing/</link>
+    <description>Recent content in Testing on What About Adarsh</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Mar 2026 21:30:00 +0100</lastBuildDate>
+    <atom:link href="https://thatsmeadarsh.github.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing the End-to-End Auto Publish Pipeline</title>
+      <link>https://thatsmeadarsh.github.io/posts/test-n8n-pipeline-e2e/</link>
+      <pubDate>Sun, 15 Mar 2026 21:30:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/posts/test-n8n-pipeline-e2e/</guid>
+      <description>&lt;p&gt;This is a test post to verify the full n8n auto-publish pipeline works end to end.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-are-testing&#34;&gt;What We Are Testing&lt;/h2&gt;&#xA;&lt;p&gt;The complete flow from &lt;code&gt;git push&lt;/code&gt; to LinkedIn post generation:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Push a new markdown post to the Hugo source repo&lt;/li&gt;&#xA;&lt;li&gt;GitHub Actions builds and deploys to GitHub Pages&lt;/li&gt;&#xA;&lt;li&gt;n8n detects the new commit via polling&lt;/li&gt;&#xA;&lt;li&gt;Fetches the markdown, parses frontmatter&lt;/li&gt;&#xA;&lt;li&gt;Generates an AI LinkedIn post via HuggingFace&lt;/li&gt;&#xA;&lt;li&gt;Waits for manual approval&lt;/li&gt;&#xA;&lt;li&gt;Posts to LinkedIn&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;If you are reading this on the live site, step 1 through 2 worked. If a LinkedIn post appeared, the whole pipeline is operational.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

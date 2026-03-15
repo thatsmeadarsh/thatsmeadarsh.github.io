@@ -30,26 +30,25 @@
 
     
     
-      <link href="/tags/workflow/index.xml" rel="alternate" type="application/rss+xml" title="What About Adarsh" />
-      <link href="/tags/workflow/index.xml" rel="feed" type="application/rss+xml" title="What About Adarsh" />
+      <link href="/tags/ci/cd/index.xml" rel="alternate" type="application/rss+xml" title="What About Adarsh" />
+      <link href="/tags/ci/cd/index.xml" rel="feed" type="application/rss+xml" title="What About Adarsh" />
       
     
 
     
-      <link rel="canonical" href="https://thatsmeadarsh.github.io/tags/workflow/">
+      <link rel="canonical" href="https://thatsmeadarsh.github.io/tags/ci/cd/">
     
 
-    <meta property="og:url" content="https://thatsmeadarsh.github.io/tags/workflow/">
+    <meta property="og:url" content="https://thatsmeadarsh.github.io/tags/ci/cd/">
   <meta property="og:site_name" content="What About Adarsh">
-  <meta property="og:title" content="Workflow">
+  <meta property="og:title" content="CI/CD">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
-  <meta itemprop="name" content="Workflow">
-  <meta itemprop="datePublished" content="2026-03-15T10:00:00+01:00">
-  <meta itemprop="dateModified" content="2026-03-15T10:00:00+01:00">
+  <meta itemprop="name" content="CI/CD">
+  <meta itemprop="dateModified" content="2026-03-15T21:30:00+01:00">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Workflow">
+  <meta name="twitter:title" content="CI/CD">
 
       
     
@@ -95,7 +94,7 @@
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Workflow
+          CI/CD
         </h1>
         
       </div>
@@ -107,7 +106,7 @@
       
   <article class="cf pa3 pa4-m pa4-l">
     <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Workflow”</p>
+      <p>Below you will find pages that utilize the taxonomy term “CI/CD”</p>
     </div>
   </article>
   <div class="mw8 center">
@@ -118,15 +117,26 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/zero-touch-blog-publishing-github-actions-n8n/" class="link black dim">
-        How I Turned a git push Into a Live Blog Post and LinkedIn Announcement — Automatically
+      <a href="/posts/test-n8n-pipeline-e2e/" class="link black dim">
+        Testing the End-to-End Auto Publish Pipeline
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>A few weeks ago, I got tired of the same ritual every time I published a blog post. Write the post, push to GitHub, wait for the build, check the site, then — if I remembered — draft a LinkedIn post to share it. Half the time I&rsquo;d forget the LinkedIn part entirely, or I&rsquo;d post it days later when the moment had already passed.</p>
-<p>So I built a system that does almost all of it for me. <code>git push</code> kicks everything off. The site builds and deploys automatically. n8n detects the new post, generates an AI-written LinkedIn announcement, and then pauses for one deliberate step: I review the draft and approve it before it goes live. That approval gate is intentional — AI-generated text is good, not always great.</p>
+      <p>This is a test post to verify the full n8n auto-publish pipeline works end to end.</p>
+<h2 id="what-we-are-testing">What We Are Testing</h2>
+<p>The complete flow from <code>git push</code> to LinkedIn post generation:</p>
+<ol>
+<li>Push a new markdown post to the Hugo source repo</li>
+<li>GitHub Actions builds and deploys to GitHub Pages</li>
+<li>n8n detects the new commit via polling</li>
+<li>Fetches the markdown, parses frontmatter</li>
+<li>Generates an AI LinkedIn post via HuggingFace</li>
+<li>Waits for manual approval</li>
+<li>Posts to LinkedIn</li>
+</ol>
+<p>If you are reading this on the live site, step 1 through 2 worked. If a LinkedIn post appeared, the whole pipeline is operational.</p>
     </div>
-    <a href="/posts/zero-touch-blog-publishing-github-actions-n8n/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+    <a href="/posts/test-n8n-pipeline-e2e/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
   </div>
 </div>
 

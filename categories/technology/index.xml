@@ -6,8 +6,15 @@
     <description>Recent content in Technology on What About Adarsh</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2026 23:15:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0100</lastBuildDate>
     <atom:link href="https://thatsmeadarsh.github.io/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Validating Form Pre-fill in n8n Two-Workflow Pipeline</title>
+      <link>https://thatsmeadarsh.github.io/posts/test-form-prefill/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0100</pubDate>
+      <guid>https://thatsmeadarsh.github.io/posts/test-form-prefill/</guid>
+      <description>&lt;p&gt;This post tests that the review form in Workflow 2 correctly pre-fills with the AI-generated LinkedIn draft from Workflow 1&amp;rsquo;s queue.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Full End-to-End Pipeline Test</title>
       <link>https://thatsmeadarsh.github.io/posts/test-full-e2e-flow/</link>
